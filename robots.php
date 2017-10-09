@@ -68,7 +68,7 @@ if(match($keys5, $texts5)){
   $arrPostData['messages'][0]['text'] = "พรีเมียร์ ชอบกินลูกชิ้น ปิ้งให้ด้วยนะ โฮ่งๆ โฮ่งๆ";
 }
 
-$keys6 = array('นอนนะ', "นอนได้", "ไปนอน",, "นอนละ");
+$keys6 = array('นอนนะ', "นอนได้", "ไปนอน", "นอนละ");
 $texts6 = $arrJson['events'][0]['message']['text'];
 if(match($keys6, $texts6)){
   $arrPostData = array();
