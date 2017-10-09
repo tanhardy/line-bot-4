@@ -65,7 +65,7 @@ if(match($keys5, $texts5)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ชอบกินลูกชิ้น โฮ่งๆ โฮ่งๆ";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ชอบกินลูกชิ้น ปิ้งให้ด้วยนะ โฮ่งๆ โฮ่งๆ";
 }
 /*
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
