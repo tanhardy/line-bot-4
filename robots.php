@@ -12,35 +12,15 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-//-- ทักทาย
-$listKeyword1= array('เมียร์', 'พรีเมียร์', 'ว่าไงเมียร์', 'ว่าไงพรีเมียร์');
-$getKeyword1 = $arrJson['events'][0]['message']['text'];
-$viewKeyword1 = end(explode(' ', $getKeyword1));
+$getKey = $arrJson['events'][0]['message']['text'];
 
-if(in_array($viewKeyword1,$listKeyword1)){
+
+if($getKey == "พรีเมียร์" || $getKey == "เมียร์"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "จ๋า โฮ่งๆ โฮ่งๆ";
-}
-
-//-- ชื่อ
-$listKeyword2= array('ชื่อไร', 'ชื่ออะไร', 'หนูชื่ออะไร', 'ชื่อว่า');
-$getKeyword2 = $arrJson['events'][0]['message']['text'];
-$viewKeyword2 = end(explode(' ', $getKeyword2));
-
-if(in_array($viewKeyword2,$listKeyword2)){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ชื่อ พรีเมียร์ จ้า โฮ่งๆ โฮ่งๆ";
-}
-/* 
-if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+  //$arrPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
 }else if($arrJson['events'][0]['message']['text'] == "ชื่ออะไร"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
