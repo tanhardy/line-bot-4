@@ -23,8 +23,6 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-$getKey =
-
 $keys1 = array('ชื่ออะไร','ชื่อไร');
 $texts1 = $arrJson['events'][0]['message']['text'];
 if(match($keys1, $texts1)){
@@ -33,7 +31,15 @@ if(match($keys1, $texts1)){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ชื่อ พรีเมียร์ โฮ่งๆ โฮ่งๆ";
 }
- 
+
+$keys2 = array('เมียร์', 'พรีเมียร์');
+$texts2 = $arrJson['events'][0]['message']['text'];
+if(match($keys2, $texts2)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "จ๋า โฮ่งๆ โฮ่งๆ";
+}
 /*
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
