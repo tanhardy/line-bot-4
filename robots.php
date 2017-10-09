@@ -67,9 +67,17 @@ if(match($keys3_2, $texts3_2)){
   $arrPostData['messages'][0]['text'] = "ฮือ หือ ฮือ T_T";
 
 }
-$keys3_3 = array('ใครกิน', 'กินมั้ย' , 'กินไหม');
+$keys3_3 = array('ไม่ร้อง', 'อย่าร้อง' , 'ห้ามร้อง');
 $texts3_3 = $arrJson['events'][0]['message']['text'];
 if(match($keys3_3, $texts3_3)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "อึ๊บ! พรีเมียร์ ไม่ร้องละ ^__^";
+}
+$keys3_4 = array('ใครกิน', 'กินมั้ย' , 'กินไหม');
+$texts3_4 = $arrJson['events'][0]['message']['text'];
+if(match($keys3_4, $texts3_4)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
