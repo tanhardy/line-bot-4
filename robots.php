@@ -58,6 +58,15 @@ if(match($keys4, $texts4)){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "กินแล้ว แล้วพี่กินหรือยัง? โฮ่งๆ โฮ่งๆ";
 }
+
+$keys5 = array('ชอบกินอะไร', "ชอบกินไร");
+$texts5 = $arrJson['events'][0]['message']['text'];
+if(match($keys5, $texts5)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ชอบกินลูกชิ้น โฮ่งๆ โฮ่งๆ";
+}
 /*
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
