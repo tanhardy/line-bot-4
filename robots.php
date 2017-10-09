@@ -50,17 +50,26 @@ if(match($keys3, $texts3)){
   $arrPostData['messages'][0]['text'] = "น่ารัก ก็รักสะเลยสิ โฮ่งๆ โฮ่งๆ";
 }
 
-$keys33 = array('ดื้อ');
-$texts33 = $arrJson['events'][0]['message']['text'];
-if(match($keys33, $texts33)){
+$keys3_1 = array('ดื้อ');
+$texts3_1 = $arrJson['events'][0]['message']['text'];
+if(match($keys3_1, $texts3_1)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษน๊า T T";
 }
-$keys333 = array('ใครกิน', 'กินมั้ย' , 'กินไหม');
-$texts333 = $arrJson['events'][0]['message']['text'];
-if(match($keys333, $texts333)){
+$keys3_2 = array('โอ๋ๆ', "อย่าร้องนะ");
+$texts3_2 = $arrJson['events'][0]['message']['text'];
+if(match($keys3_2, $texts3_2)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ฮือ หือ ฮือ T_T";
+
+}
+$keys3_3 = array('ใครกิน', 'กินมั้ย' , 'กินไหม');
+$texts3_3 = $arrJson['events'][0]['message']['text'];
+if(match($keys3_3, $texts3_3)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
@@ -123,6 +132,18 @@ if(match($keys9, $texts9)){
   $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
   $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
 }
+
+$keys99 = array('ยุบ้านกะ', "อยู่บ้านกับ");
+$texts99 = $arrJson['events'][0]['message']['text'];
+if(match($keys99, $texts99)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ อยู่เฝ้าบ้านคนเดียว ทุกคนทิ้งพรีเมียร์หมดเลย";
+
+}
+
+
 
  
 $ch = curl_init();
