@@ -77,6 +77,16 @@ if(match($keys6, $texts6)){
   $arrPostData['messages'][0]['text'] = "ฝันดีนะคร๊าบบ อย่าลืมฝันถึงพรีเมียร์ด้วยละ โฮ่งๆ โฮ่งๆ";
 }
 
+$keys6 = array('หายไป', "อย่าหาย");
+$texts6 = $arrJson['events'][0]['message']['text'];
+if(match($keys6, $texts6)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ไม่ได้หายไปไหนน๊า พรีเมียร์อยู่นี่ไง อยู่ในใจทุกๆคน โฮ่งๆ โฮ่งๆ";
+}
+
+
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
