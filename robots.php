@@ -84,8 +84,18 @@ if(match($keys7, $texts7)){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "พรีเมียร์ไม่ได้หายไปไหนน๊า พรีเมียร์อยู่นี่ไง อยู่ในใจทุกๆคน โฮ่งๆ โฮ่งๆ";
+
 }
 
+$keys8 = array('ขอดูรูป', "ขอดูภาพ");
+$texts8 = $arrJson['events'][0]['message']['text'];
+if(match($keys8, $texts8)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "image";
+  $arrPostData['messages'][0]['originalContentUrl'] = "https://github.com/dekcomgigkok/line-bot/blob/master/1111.jpg";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://github.com/dekcomgigkok/line-bot/blob/master/1111.jpg";
+}
 
  
 $ch = curl_init();
