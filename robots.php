@@ -119,8 +119,9 @@ $texts9 = $arrJson['events'][0]['message']['text'];
 if(match($keys9, $texts9)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ต้องเอาลูกชิ้นมาแลกนะ ถึงจะให้ ^__^ โฮ่งๆ โฮ่งๆ";
+  $arrPostData['messages'][0]['type'] = "image";
+  $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
 }
 
  
