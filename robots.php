@@ -97,6 +97,15 @@ if(match($keys8, $texts8)){
   $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/1111.jpg";
 }
 
+$keys9 = array('ขอมือ', "เอามือมา");
+$texts9 = $arrJson['events'][0]['message']['text'];
+if(match($keys9, $texts9)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ต้องเอาลูกชิ้นมาแลกนะ ถึงจะให้ ^__^ โฮ่งๆ โฮ่งๆ";
+}
+
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
