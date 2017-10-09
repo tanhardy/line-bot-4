@@ -49,6 +49,15 @@ if(match($keys3, $texts3)){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "น่ารัก ก็รักสะเลยสิ โฮ่งๆ โฮ่งๆ";
 }
+
+$keys4 = array('กินข้าวยัง', "กินข้าวหรือยัง");
+$texts4 = $arrJson['events'][0]['message']['text'];
+if(match($keys4, $texts4)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "กินแล้ว แล้วพี่กินหรือยัง? โฮ่งๆ โฮ่งๆ";
+}
 /*
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
