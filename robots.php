@@ -152,7 +152,7 @@ if(match($keys99, $texts99)){
 
 }
 
-$keys10_1 = array('คิดถึงพรีเมียร์', 'คิดถึงเมียร์');
+$keys10_1 = array('คิดถึงพรีเมียร์', 'คิดถึงเมียร์', 'คิดถึงนะ');
 $texts10_1 = $arrJson['events'][0]['message']['text'];
 if(match($keys10_1, $texts10_1)){
   $arrPostData = array();
@@ -168,6 +168,15 @@ if(match($keys10_2, $texts10_2)){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "พรีเมียร์ คิดถึงพี่ไง โฮ่งๆ โฮ่งๆ";
+}
+
+$keys11_1 = array('ทำไร', 'ทำอะไร');
+$texts11_1 = $arrJson['events'][0]['message']['text'];
+if(match($keys11_1, $texts11_1)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ นอนเล่นเฉยๆ แต่ก็เริ่มหิว เหมือนกันนะ โฮ่งๆ โฮ่งๆ";
 }
 
 $ch = curl_init();
