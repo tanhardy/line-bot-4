@@ -56,7 +56,15 @@ if(match($keys33, $texts33)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษน๊า T T โฮ่งๆ โฮ่งๆ";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษน๊า T T";
+}
+$keys333 = array('ใครกิน', 'กินมั้ย' , 'กินไหม');
+$texts333 = $arrJson['events'][0]['message']['text'];
+if(match($keys333, $texts333)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอกินด้วยได้ไหม โฮ่งๆ โฮ่งๆ";
 }
 
 $keys4 = array('กินข้าวยัง', "กินข้าวหรือยัง");
