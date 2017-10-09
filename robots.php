@@ -40,6 +40,15 @@ if(match($keys2, $texts2)){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "จ๋า โฮ่งๆ โฮ่งๆ";
 }
+
+$keys3 = array('น่ารัก');
+$texts3 = $arrJson['events'][0]['message']['text'];
+if(match($keys3, $texts3)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "น่ารัก ก็รักสะเลยสิ โฮ่งๆ โฮ่งๆ";
+}
 /*
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
