@@ -77,9 +77,9 @@ if(match($keys6, $texts6)){
   $arrPostData['messages'][0]['text'] = "ฝันดีนะคร๊าบบ อย่าลืมฝันถึงพรีเมียร์ด้วยละ โฮ่งๆ โฮ่งๆ";
 }
 
-$keys6 = array('หายไป', "อย่าหาย");
-$texts6 = $arrJson['events'][0]['message']['text'];
-if(match($keys6, $texts6)){
+$keys7 = array('หายไป', "อย่าหาย");
+$texts7 = $arrJson['events'][0]['message']['text'];
+if(match($keys7, $texts7)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
