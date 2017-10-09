@@ -93,8 +93,8 @@ if(match($keys8, $texts8)){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";
-  $arrPostData['messages'][0]['originalContentUrl'] = "http://dekcomgigkok.com/premier/1111.jpg";
-  $arrPostData['messages'][0]['previewImageUrl'] = "http://dekcomgigkok.com/premier/1111.jpg";
+  $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/1111.jpg";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/1111.jpg";
 }
 
  
