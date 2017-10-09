@@ -50,6 +50,15 @@ if(match($keys3, $texts3)){
   $arrPostData['messages'][0]['text'] = "น่ารัก ก็รักสะเลยสิ โฮ่งๆ โฮ่งๆ";
 }
 
+$keys33 = array('ดื้อ');
+$texts33 = $arrJson['events'][0]['message']['text'];
+if(match($keys33, $texts33)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษน๊า T T โฮ่งๆ โฮ่งๆ";
+}
+
 $keys4 = array('กินข้าวยัง', "กินข้าวหรือยัง");
 $texts4 = $arrJson['events'][0]['message']['text'];
 if(match($keys4, $texts4)){
