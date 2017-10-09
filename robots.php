@@ -1,7 +1,7 @@
 <?php 
 header('HTTP/1.1 200 OK');
 header("Status: 200 OK");
-$strAccessToken = "M1sMaIyJRkqLfMMUidifFZyEb03ZMzZi+j0jJYQdWFattCHVfN3r0v8OYlc1x2pb0I6eCL9i8ptT6bkfsELPgKfiJkRqNcfvq+ct1iT/wlXdUlUuLeRtn+7+ufEHh7ELV7XjoZmoE1ZHyEdSFVC44wdB04t89/1O/w1cDnyilFU=";
+$strAccessToken = "5/iFxAAffk0dRCb1xwsgXbiIU+rUbuTmBaoabFY+fiRwQ3uDTnOx1SHGgAUrxyJ70I6eCL9i8ptT6bkfsELPgKfiJkRqNcfvq+ct1iT/wlUXcNYqIT5V9LDFbiq4GCeFVKI9HrkOoJcweh4hieB5CAdB04t89/1O/w1cDnyilFU=";
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
@@ -11,7 +11,31 @@ $strUrl = "https://api.line.me/v2/bot/message/reply";
 $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
- 
+
+//-- ทักทาย
+$listKeyword1= array('เมียร์', 'พรีเมียร์', 'ว่าไงเมียร์', 'ว่าไงพรีเมียร์');
+$getKeyword1 = $arrJson['events'][0]['message']['text'];
+$viewKeyword1 = end(explode(' ', $getKeyword1));
+
+if(in_array($viewKeyword1,$listKeyword1)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "จ๋า โฮ่งๆ โฮ่งๆ";
+}
+
+//-- ชื่อ
+$listKeyword2= array('ชื่อไร', 'ชื่ออะไร', 'หนูชื่ออะไร', 'ชื่อว่า');
+$getKeyword2 = $arrJson['events'][0]['message']['text'];
+$viewKeyword2 = end(explode(' ', $getKeyword2));
+
+if(in_array($viewKeyword2,$listKeyword2)){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ชื่อ พรีเมียร์ จ้า โฮ่งๆ โฮ่งๆ";
+}
+/* 
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -27,16 +51,6 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-}else if($arrJson['events'][0]['message']['text'] == "พี่เครักใคร"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "พี่เครักทิพย์มาก";
-}else if($arrJson['events'][0]['message']['text'] == "ทิพย์รักใคร"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ไม่รู้เดาใจยาก";
 }else if($arrJson['events'][0]['message']['text'] == "ทำไมไม่ตอบ"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -48,7 +62,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 }
- 
+*/
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
