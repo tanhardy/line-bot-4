@@ -197,7 +197,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
 
-  $keys6 = array('นอนนะ', 'นอนได้', 'ไปนอน', 'นอนละ');
+  $keys6 = array('นอนนะ', 'นอนได้', 'ไปนอน', 'นอนละ', 'ฝันดี');
   $texts6 = $arrJson['events'][0]['message']['text'];
   if(match($keys6, $texts6)){
     $arrPostData = array();
