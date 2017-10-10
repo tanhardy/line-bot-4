@@ -27,14 +27,16 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 /* sticker */
 if($arrJson['events'][0]['message']['type']=="sticker"){
 
-  $sticker=array("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17");
-  $randSticker=array_rand($sticker);
+  $sticker1 = array("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17");
+  $sticker2 = array("101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139");
+  $merged = array_merge($sticker1,$sticker2);
+  $random_keys=array_rand($merged);
 
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
-  $arrPostData['messages'][0]['stickerId'] = $sticker[$randSticker];
+  $arrPostData['messages'][0]['stickerId'] = $merged[$random_keys];
 
 /* text */
 }else{
