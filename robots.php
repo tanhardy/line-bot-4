@@ -26,7 +26,10 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 /* sticker */
 if($arrJson['events'][0]['message']['type']=="sticker"){
-  $randSticker = rand(1,430);
+
+  $sticker=array("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17");
+  $randSticker=array_rand($sticker,2);
+
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
