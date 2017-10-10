@@ -25,7 +25,7 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 
 /* sticker */
-if($arrJson['events'][0]['type']=="sticker"){
+if($arrJson['messages'][0]['type']=="sticker"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
