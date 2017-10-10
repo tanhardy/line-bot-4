@@ -108,7 +108,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษนะ ฮือๆ ๆ T T อย่าตีเมียร์เลยนะ";
+    $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษนะ ฮือๆ ๆ T T อย่าตีพรีเมียร์เลยนะ";
   }
 
   $keys4 = array('กินข้าวยัง', "กินข้าวหรือยัง");
