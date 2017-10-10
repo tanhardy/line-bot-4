@@ -94,7 +94,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
-  $keys3_2 = array('โอ๋ๆ', "อย่าร้องนะ");
+  $keys3_2 = array('โอ๋ๆ', 'อย่าร้องนะ');
   $texts3_2 = $arrJson['events'][0]['message']['text'];
   if(match($keys3_2, $texts3_2)){
     $arrPostData = array();
@@ -138,7 +138,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = "พรีเมียร์ เก่งอยู่แล้ว โฮ่งๆ โฮ่งๆ";
   }
 
-  $keys4 = array('กินข้าวยัง', "กินข้าวหรือยัง");
+  $keys4 = array('กินข้าวยัง', 'กินข้าวหรือยัง');
   $texts4 = $arrJson['events'][0]['message']['text'];
   if(match($keys4, $texts4)){
     $arrPostData = array();
@@ -147,7 +147,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = "กินแล้ว แล้วพี่กินหรือยัง? โฮ่งๆ โฮ่งๆ";
   }
 
-  $keys5 = array('ชอบกินอะไร', "ชอบกินไร");
+  $keys5 = array('ชอบกินอะไร', 'ชอบกินไร');
   $texts5 = $arrJson['events'][0]['message']['text'];
   if(match($keys5, $texts5)){
     $arrPostData = array();
@@ -164,7 +164,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/1.jpg";
     $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/1.jpg";
   }
-  $keys5_2 = array('อร่อยมะ', "อร่อยมั้ย");
+  $keys5_2 = array('อร่อยมะ', 'อร่อยมั้ย', 'อร่อยไหม');
   $texts5_2 = $arrJson['events'][0]['message']['text'];
   if(match($keys5_2, $texts5_2)){
     $arrPostData = array();
@@ -173,7 +173,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอเพิ่มอีก 3 ไม้น๊าาาาาา โฮ่งๆ โฮ่งๆ";
   }
 
-  $keys6 = array('นอนนะ', "นอนได้", "ไปนอน", "นอนละ");
+  $keys6 = array('นอนนะ', 'นอนได้', 'ไปนอน', 'นอนละ');
   $texts6 = $arrJson['events'][0]['message']['text'];
   if(match($keys6, $texts6)){
     $arrPostData = array();
@@ -182,7 +182,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = "ฝันดีนะคร๊าบบ อย่าลืมฝันถึงพรีเมียร์ด้วยละ โฮ่งๆ โฮ่งๆ";
   }
 
-  $keys7 = array('หายไป', "อย่าหาย");
+  $keys7 = array('หายไป', 'อย่าหาย');
   $texts7 = $arrJson['events'][0]['message']['text'];
   if(match($keys7, $texts7)){
     $arrPostData = array();
@@ -192,7 +192,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
 
   }
 
-  $keys8 = array('ขอดูรูป', "ขอดูภาพ");
+  $keys8 = array('ขอดูรูป', 'ขอดูภาพ');
   $texts8 = $arrJson['events'][0]['message']['text'];
   if(match($keys8, $texts8)){
     $arrPostData = array();
@@ -202,7 +202,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/1111.jpg";
   }
 
-  $keys9 = array('ขอมือ', "เอามือมา");
+  $keys9 = array('ขอมือ', 'เอามือมา');
   $texts9 = $arrJson['events'][0]['message']['text'];
   if(match($keys9, $texts9)){
     $arrPostData = array();
@@ -212,7 +212,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/S__20324584.jpg";
   }
 
-  $keys99 = array('ยุบ้านกะ', "อยู่บ้านกับ");
+  $keys99 = array('ยุบ้านกะ','อยู่บ้านกับ');
   $texts99 = $arrJson['events'][0]['message']['text'];
   if(match($keys99, $texts99)){
     $arrPostData = array();
