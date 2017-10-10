@@ -53,10 +53,13 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   $keys2 = array('เมียร์', 'พรีเมียร์');
   $texts2 = $arrJson['events'][0]['message']['text'];
   if(match($keys2, $texts2)){
+    $sticker = array("จ๋า โฮ่ง โฮ่ง","พรีเมียร์ยุนี่แล้ว","เรียกยุนั้นแหละหมาจะนอน");
+    $random_keys=array_rand($sticker);
+
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "จ๋า โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
 
   $keys3 = array('น่ารัก');
