@@ -25,7 +25,7 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 
 /* sticker */
-if($arrJson['messages'][0]['type']=="sticker"){
+if($arrJson['events'][0]['message']['type']=="sticker"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
@@ -40,7 +40,7 @@ if($arrJson['messages'][0]['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ชื่อ พรีเมียร์ โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['message']['type'];
   }
 
   $keys2 = array('เมียร์', 'พรีเมียร์');
