@@ -188,16 +188,13 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   $keys5_3 = array('อาบน้ำกัน','ไปอาบน้ำ');
   $texts5_3 = $arrJson['events'][0]['message']['text'];
   if(match($keys5_3, $texts5_3)){
+    $sticker = array("หนีก่อนดีกว่าเรา","แกล้งตายดีกว่า");
+    $random_keys=array_rand($sticker);
+
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "image";
-    $arrPostData['messages'][0]['originalContentUrl'] = "https://whispering-dusk-19966.herokuapp.com/2.jpg";
-    $arrPostData['messages'][0]['previewImageUrl'] = "https://whispering-dusk-19966.herokuapp.com/2.jpg";
-    
-    $arrPostData2 = array();
-    $arrPostData2['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData2['messages'][0]['type'] = "text";
-    $arrPostData2['messages'][0]['text'] = "พรีเมียร์ ขอไปเดินเล่นแปปน๊าาาา โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
 
   $keys6 = array('นอนนะ', 'นอนได้', 'ไปนอน', 'นอนละ');
