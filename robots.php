@@ -26,12 +26,14 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
 /* sticker */
 if($arrJson['events'][0]['message']['type']=="sticker"){
+  $randSticker = rand(1,430);
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "sticker";
   $arrPostData['messages'][0]['packageId'] = "1";
-  $arrPostData['messages'][0]['stickerId'] = "1";
-  
+  $arrPostData['messages'][0]['stickerId'] = $randSticker;
+
+/* text */
 }else{
 
   $keys1 = array('ชื่ออะไร','ชื่อไร');
@@ -40,7 +42,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = $arrJson['events'][0]['message']['type'];
+    $arrPostData['messages'][0]['text'] = "ชื่อ พรีเมียร์ โฮ่งๆ โฮ่งๆ";
   }
 
   $keys2 = array('เมียร์', 'พรีเมียร์');
