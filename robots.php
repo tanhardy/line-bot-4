@@ -111,6 +111,15 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = "พรีเมียร์ ขอโทษนะ ฮือๆ ๆ T T อย่าตีพรีเมียร์เลยนะ";
   }
 
+  $keys3_5 = array('เก่งจัง', 'เก่งมาก');
+  $texts3_5 = $arrJson['events'][0]['message']['text'];
+  if(match($keys3_5, $texts3_5)){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "พรีเมียร์ เก่งอยู่แล้ว โฮ่งๆ โฮ่งๆ";
+  }
+
   $keys4 = array('กินข้าวยัง', "กินข้าวหรือยัง");
   $texts4 = $arrJson['events'][0]['message']['text'];
   if(match($keys4, $texts4)){
