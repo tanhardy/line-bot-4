@@ -284,7 +284,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
       $arr = explode("+", $text_cal_1_1);
       $first = $arr[0];
       $last = $arr[1];
-      $sum = $first+$last/100;
+      $sum = $sum = $last*$first/100 + $first;
       
       $arrPostData = array();
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
