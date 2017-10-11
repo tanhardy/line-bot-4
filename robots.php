@@ -272,6 +272,60 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['type'] = "text";
     $arrPostData['messages'][0]['text'] = "พรีเมียร์ นอนเล่นเฉยๆ แต่ก็เริ่มหิว เหมือนกันนะ โฮ่งๆ โฮ่งๆ";
   }
+
+  /* calculate */
+  $key_cal_1 = array('+');
+  $text_cal_1 = $arrJson['events'][0]['message']['text'];
+  if(match($key_cal_1, $text_cal_1)){
+    $arr = explode("+", $text_cal_1);
+    $first = $arr[0];
+    $last = $arr[1];
+    $sum = $first+$last;
+
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+  }
+
+  $key_cal_2= array('-');
+  $text_cal_2 = $arrJson['events'][0]['message']['text'];
+  if(match($key_cal_2, $text_cal_2)){
+    $arr = explode("-", $text_cal_2);
+    $first = $arr[0];
+    $last = $arr[1];
+    $sum = $first-$last;
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+  }
+
+  $key_cal_3= array('*');
+  $text_cal_3 = $arrJson['events'][0]['message']['text'];
+  if(match($key_cal_3, $text_cal_3)){
+    $arr = explode("*", $text_cal_3);
+    $first = $arr[0];
+    $last = $arr[1];
+    $sum = $first*$last;
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+  }
+
+  $key_cal_4= array('/');
+  $text_cal_4 = $arrJson['events'][0]['message']['text'];
+  if(match($key_cal_4, $text_cal_4)){
+    $arr = explode("/", $text_cal_4);
+    $first = $arr[0];
+    $last = $arr[1];
+    $sum = $first/$last;
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+  }
 } // end message
 
 
