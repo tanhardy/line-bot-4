@@ -312,7 +312,13 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
       $arr = explode("-", $text_cal_2_1);
       $first = $arr[0];
       $last = $arr[1];
-      $sum = $last*$first/100 - $first;
+
+      $arr2 = explode("%", $last);
+      $explode_percent = $arr2[0];
+
+      $percent = $explode_percent*100/100 + 100;
+      $sum_percent = $explode_percent/$percent;
+      $sum = $first*$sum_percent-$first;
       
       $arrPostData = array();
       $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
