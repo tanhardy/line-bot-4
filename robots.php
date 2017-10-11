@@ -301,30 +301,33 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = "เท่ากับ ".number_format($sum)." จ้า";
   }
 
+
   $key_cal_3= array('*');
   $text_cal_3 = $arrJson['events'][0]['message']['text'];
   if(match($key_cal_3, $text_cal_3)){
-    $arr = explode("*", $text_cal_3);
-    $first = $arr[0];
-    $last = $arr[1];
-    $sum = $first*$last;
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เท่ากับ ".number_format($sum)." จ้า";
-  }
-  $key_cal_3_1 = array('*','%');
-  $text_cal_3_1 = $arrJson['events'][0]['message']['text'];
-  if(match($key_cal_3_1, $text_cal_3_1)){
-    $arr = explode("*", $text_cal_3_1);
-    $first = $arr[0];
-    $last = $arr[1];
-    $sum = $first*$last/100;
-    
-    $arrPostData = array();
-    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-    $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เท่ากับ ".number_format($sum)." จ้า";
+
+    $key_cal_3_1 = array('%');
+    $text_cal_3_1 = $arrJson['events'][0]['message']['text'];
+    if(match($key_cal_3_1, $text_cal_3_1)){
+      $arr = explode("*", $text_cal_3_1);
+      $first = $arr[0];
+      $last = $arr[1];
+      $sum = $first*$last/100;
+      
+      $arrPostData = array();
+      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+      $arrPostData['messages'][0]['type'] = "text";
+      $arrPostData['messages'][0]['text'] = "เท่ากับ ".number_format($sum)." จ้า";
+    }else{
+      $arr = explode("*", $text_cal_3_1);
+      $first = $arr[0];
+      $last = $arr[1];
+      $sum = $first*$last;
+      $arrPostData = array();
+      $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+      $arrPostData['messages'][0]['type'] = "text";
+      $arrPostData['messages'][0]['text'] = "เท่ากับ ".number_format($sum)." จ้า";
+    }
   }
 
   $key_cal_4= array('/');
