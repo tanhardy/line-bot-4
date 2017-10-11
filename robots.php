@@ -285,7 +285,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ ".$sum." จ้า";
   }
 
   $key_cal_2= array('-');
@@ -298,7 +298,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ ".$sum." จ้า";
   }
 
   $key_cal_3= array('*');
@@ -311,7 +311,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ ".$sum." จ้า";
   }
 
   $key_cal_4= array('/');
@@ -324,7 +324,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "เท่ากับ "+$sum+" จ้า";
+    $arrPostData['messages'][0]['text'] = "เท่ากับ ".$sum." จ้า";
   }
 } // end message
 
