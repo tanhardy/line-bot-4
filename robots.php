@@ -150,6 +150,18 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
     $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
 
+  $keys3_8 = array('อย่ายุ่ง', 'ยุ่งจัง');
+  $texts3_8 = $arrJson['events'][0]['message']['text'];
+  if(match($keys3_8, $texts3_8)){
+    $sticker = array("พรีเมียร์เหงา","พรีเมียร์ขอโทษนะ");
+    $random_keys=array_rand($sticker);
+
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
+  }
+
   $keys4 = array('กินข้าวยัง', 'กินข้าวหรือยัง');
   $texts4 = $arrJson['events'][0]['message']['text'];
   if(match($keys4, $texts4)){
