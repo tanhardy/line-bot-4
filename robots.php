@@ -165,7 +165,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   $keys3_9 = array('อ่านไม่ตอบ','หยิ่ง');
   $texts3_9 = $arrJson['events'][0]['message']['text'];
   if(match($keys3_9, $texts3_9)){
-    $sticker = array("พรีเมียร์ งอน อยู่","พรีเมียร์ ไม่ได้หยิ่งนะ");
+    $sticker = array("พรีเมียร์ งอน อยู่","พรีเมียร์ ไม่ได้หยิ่งนะ แต่กำลังกินลูกชิ้นอยู่ อิอิ ^__^");
     $random_keys=array_rand($sticker);
 
     $arrPostData = array();
