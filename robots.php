@@ -224,10 +224,13 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   $keys6 = array('นอนนะ', 'นอนได้', 'ไปนอน', 'นอนละ', 'ฝันดี');
   $texts6 = $arrJson['events'][0]['message']['text'];
   if(match($keys6, $texts6)){
+    $sticker = array("ฝันดีนะคร๊าบบ อย่าลืมฝันถึงพรีเมียร์ด้วยละ โฮ่งๆ โฮ่งๆ","พรีเมียร์ ยังไม่ง่วงเลย");
+    $random_keys=array_rand($sticker);
+
     $arrPostData = array();
     $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
     $arrPostData['messages'][0]['type'] = "text";
-    $arrPostData['messages'][0]['text'] = "ฝันดีนะคร๊าบบ อย่าลืมฝันถึงพรีเมียร์ด้วยละ โฮ่งๆ โฮ่งๆ";
+    $arrPostData['messages'][0]['text'] = $sticker[$random_keys];
   }
 
   $keys7 = array('หายไป', 'อย่าหาย');
