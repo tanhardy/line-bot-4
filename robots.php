@@ -302,9 +302,18 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   /*------------------------*/
   /* lotto */
   /*------------------------*/
+  $keys_lotto = array('ขอหวย','บอกหวยหน่อย');
+  $texts_lotto = $arrJson['events'][0]['message']['text'];
+  if(match($keys_lotto, $texts_lotto)){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "อยากได้เลขท้าย 2 ตัว หรือเลขท้าย 3 ตัว";
+  }
+
   $number_lotto2 = '1234567890';
   $shuffled_lotto2 = str_shuffle($number_lotto2);
-  $keys_lotto2 = array('ขอหวย 2 ตัว','บอกหวยหน่อย 2 ตัว');
+  $keys_lotto2 = array('ขอหวย 2 ตัว','ขอหวยหน่อย 2 ตัว','บอกหวยหน่อย 2 ตัว','บอกหวย 2 ตัว','เลขท้าย 2 ตัว');
   $texts_lotto2 = $arrJson['events'][0]['message']['text'];
   if(match($keys_lotto2, $texts_lotto2)){
     $arrPostData = array();
@@ -315,7 +324,7 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
   
   $number_lotto3 = '1234567890';
   $shuffled_lotto3 = str_shuffle($number_lotto3);
-  $keys_lotto3 = array('ขอหวย 3 ตัว','บอกหวยหน่อย 3 ตัว');
+  $keys_lotto3 = array('ขอหวย 3 ตัว','ขอหวยหน่อย 3 ตัว','บอกหวยหน่อย 3 ตัว','บอกหวย 3 ตัว','เลขท้าย 3 ตัว');
   $texts_lotto3 = $arrJson['events'][0]['message']['text'];
   if(match($keys_lotto3, $texts_lotto3)){
     $arrPostData = array();
