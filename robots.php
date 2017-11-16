@@ -40,6 +40,20 @@ if($arrJson['events'][0]['message']['type']=="sticker"){
 
 /* text */
 }else{
+  
+
+  /*-- lotto --*/
+  
+  $number_lotto = '1234567890';
+  $shuffled_lotto = str_shuffle($number_lotto);
+  $keys_lotto = array('ขอหวย','บอกหวย');
+  $texts_lotto = $arrJson['events'][0]['message']['text'];
+  if(match($keys_lotto, $texts_lotto)){
+    $arrPostData = array();
+    $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+    $arrPostData['messages'][0]['type'] = "text";
+    $arrPostData['messages'][0]['text'] = "เลยท้าย 2 ตัว ".substr($shuffled_lotto ,0,2)." เลยท้าย 3 ตัว ".substr($shuffled_lotto ,0,3);
+  }
 
   $keys1 = array('ชื่ออะไร','ชื่อไร');
   $texts1 = $arrJson['events'][0]['message']['text'];
