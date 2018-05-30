@@ -1,7 +1,6 @@
 <?php 
 header('HTTP/1.1 200 OK');
 header("Status: 200 OK");
-
 $strAccessToken = "g9dQqU7Lew8MZMX8Mj1daewAER0g4eygxB/FLDUbMecNMAJ7vyBDOtyHk2osLE1540sMUNVyDoMB1QN+708xZOyfVsFjHH3H5dqG87PenA/zLKndQskuG8WuEXYrLiHUyHmiaZVd7sbgkSAgK73O7AdB04t89/1O/w1cDnyilFU=";
  
 $content = file_get_contents('php://input');
@@ -22,23 +21,24 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "BOT_Mirage จ้า";
-}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
+  $arrPostData['messages'][0]['text'] = "MirageBoTNoi จ้า";
+}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง""Help"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
+  $arrPostData['messages'][0]['text'] = "โปรดพิมพ์เลือกฟังก์ชั่น ดังนี้ 1.STOCK 2.ราคาขาย 3.สินค้าค้างสต๊อก 4.โปรโมชั่น 5.อื่นๆ";
 }else if($arrJson['events'][0]['message']['text'] == "MirageAudio"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "World Champion Quality";
-    }else{
+}else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
+  $arrPostData['messages'][0]['text'] = "กำลังพัฒนาระบบรอสักครู่จ้า ^^ ";
 }
+ 
  
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
@@ -50,6 +50,5 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
-
 echo "Hello World";
 ?>
