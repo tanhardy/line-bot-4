@@ -2,7 +2,7 @@
 header('HTTP/1.1 200 OK');
 header("Status: 200 OK");
 
-$strAccessToken = "5/iFxAAffk0dRCb1xwsgXbiIU+rUbuTmBaoabFY+fiRwQ3uDTnOx1SHGgAUrxyJ70I6eCL9i8ptT6bkfsELPgKfiJkRqNcfvq+ct1iT/wlUXcNYqIT5V9LDFbiq4GCeFVKI9HrkOoJcweh4hieB5CAdB04t89/1O/w1cDnyilFU=";
+$strAccessToken = "g9dQqU7Lew8MZMX8Mj1daewAER0g4eygxB/FLDUbMecNMAJ7vyBDOtyHk2osLE1540sMUNVyDoMB1QN+708xZOyfVsFjHH3H5dqG87PenA/zLKndQskuG8WuEXYrLiHUyHmiaZVd7sbgkSAgK73O7AdB04t89/1O/w1cDnyilFU=";
  
 $content = file_get_contents('php://input');
 $arrJson = json_decode($content, true);
@@ -22,17 +22,17 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ฉันยังไม่มีชื่อนะ";
+  $arrPostData['messages'][0]['text'] = "BOT_Mirage จ้า";
 }else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
-}else if($arrJson['events'][0]['message']['text'] == "พี่เครักใคร"){
+}else if($arrJson['events'][0]['message']['text'] == "MirageAudio"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "พี่เครักทิพย์มาก";
+  $arrPostData['messages'][0]['text'] = "World Champion Quality";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
