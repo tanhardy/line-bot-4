@@ -1,4 +1,4 @@
-<?php 
+?php 
 header('HTTP/1.1 200 OK');
 header("Status: 200 OK");
 $strAccessToken = "YAUg5wm0qQbIA3a9LwA4XntIf9i22QRy9v296uj+fjqA6nFPBo8Hrxs34vT/fzd640sMUNVyDoMB1QN+708xZOyfVsFjHH3H5dqG87PenA9iKT64JNnm+n3HT0frX0VT5G79cmHoyP4d/vKq9f60PQdB04t89/1O/w1cDnyilFU=
@@ -22,22 +22,22 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "MirageBoTNoi จ้า";
-}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง""Help"){
+  $arrPostData['messages'][0]['text'] = "มิราจบอทน้อย";
+}else if($arrJson['events'][0]['message']['text'] == "ทำอะไรได้บ้าง"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "โปรดพิมพ์เลือกฟังก์ชั่น ดังนี้ 1.STOCK 2.ราคาขาย 3.สินค้าค้างสต๊อก 4.โปรโมชั่น 5.อื่นๆ";
+  $arrPostData['messages'][0]['text'] = "โปรดเลือกคำสั่ง 1.STOCK 2.ราคาขาย 3.โปรโมชั่น 4.อื่นๆ";
 }else if($arrJson['events'][0]['message']['text'] == "MirageAudio"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "World Champion Quality";
+  $arrPostData['messages'][0]['text'] = "WorldChampionQuality";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "กำลังพัฒนาระบบรอสักครู่จ้า ^^ ";
+  $arrPostData['messages'][0]['text'] = "ผมยังไม่มีคำสั่งในระบบนี้ กำลังอัพเดทจ้า T T";
 }
  
  
